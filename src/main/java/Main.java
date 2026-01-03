@@ -13,6 +13,7 @@ class Main {
         System.out.println("2. Show students");
         System.out.println("3. Find student by name");
         System.out.println("4. Delete student");
+        System.out.println("5. Change studnet's age");
         System.out.println("0. Exit");
         System.out.println("----------");
         System.out.print("Choose: ");
@@ -67,6 +68,17 @@ class Main {
             System.out.print("Enter last name: ");
             lastName = scanner.next();
             s.deleteStudent(name, lastName);
+            System.out.println("----------");
+            break;
+          case 5:
+            System.out.println("----------");
+            System.out.print("Enter name: ");
+            name = scanner.next();
+            System.out.print("Enter last name: ");
+            lastName = scanner.next();
+            System.out.print("Enter new age: ");
+            age = scanner.nextInt();
+            s.changeAge(name, lastName, age);
             System.out.println("----------");
             break;
           case 0:

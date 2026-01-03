@@ -24,6 +24,10 @@ public class Student {
     return Age;
   }
 
+  public int SetAge(int age) {
+    return Age = age;
+  }
+
   public String ToString() {
     return Name + " " + LastName + " " + Integer.toString(Age) + " " + bornDate;
   }
