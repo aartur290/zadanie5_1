@@ -31,7 +31,15 @@ public class Service {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
-    return null;
+  public Collection<Student> findStudentByName(String name) throws IOException {
+    var list = new ArrayList<Student>();
+    var student = getStudents();
+    for (Student current : student)
+      if (current.GetName().equals(name))
+        list.add(current);
+
+    // System.out.println(list);
+
+    return list;
   }
 }

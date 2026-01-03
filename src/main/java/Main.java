@@ -11,6 +11,7 @@ class Main {
       while (true) {
         System.out.println("1. Add student");
         System.out.println("2. Show students");
+        System.out.println("3. Find student by name");
         System.out.println("0. Exit");
         System.out.println("----------");
         System.out.print("Choose: ");
@@ -43,6 +44,19 @@ class Main {
             var students = s.getStudents();
             for (Student current : students)
               System.out.println(current.ToString());
+            System.out.println("----------");
+            break;
+          case 3:
+            System.out.println("----------");
+            System.out.print("Enter name: ");
+            name = scanner.next();
+            System.out.println("----------");
+            var found = s.findStudentByName(name);
+            if (found.isEmpty())
+              System.out.println("Not found");
+            else
+              for (Student current : found)
+                System.out.println(current.ToString());
             System.out.println("----------");
             break;
           case 0:
