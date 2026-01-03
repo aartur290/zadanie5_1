@@ -16,6 +16,10 @@ public class Student {
     return Name;
   }
 
+  public String GetLastName() {
+    return LastName;
+  }
+
   public int GetAge() {
     return Age;
   }

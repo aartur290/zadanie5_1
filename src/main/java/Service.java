@@ -42,4 +42,23 @@ public class Service {
 
     return list;
   }
-}
+
+  public void deleteStudent(String name, String lastName) throws IOException {
+    boolean flag = true;
+    System.out.println("----------");
+    System.out.println("Deleting student: " + name + " " + lastName);
+    var list = new ArrayList<Student>();
+    var student = getStudents();
+
+    BufferedWriter bw = new BufferedWriter(new FileWriter("db.txt"));
+    for (Student current : student)
+      if (!(current.GetName().equals(name) && current.GetLastName().equals(lastName))) {
+        bw.write(current.ToString());
+        bw.newLine();
+      } else
+        flag = false;
+
+    if (flag)
+      System.out.println("Student not found");
+    bw.close();
+  }}
